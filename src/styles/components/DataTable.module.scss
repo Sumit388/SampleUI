@@ -1,0 +1,122 @@
+@use "../Base/" as *;
+
+.tableContainer {
+  width: 100%;
+  border: 1px solid $purple;
+  border-radius: 16px;
+  box-shadow: 0 0 10px 4px $purple;
+  overflow: hidden;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: $font-12;
+  font-weight: 500;
+
+  tr {
+    th,
+    td {
+      text-align: start;
+      padding: 16px;
+      border-bottom: 1px solid $purple;
+
+      .asnValue,
+      .centerNames {
+        color: $pink;
+        font-weight: 600;
+      }
+
+      .actualValue {
+        color: $pink;
+        font-weight: 600;
+        margin-right: 6px;
+      }
+
+      .score {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        gap: 10px;
+
+        .value {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .semiCircleOuter {
+          width: 100px;
+          height: 50px;
+          border-top-left-radius: 110px;
+          border-top-right-radius: 110px;
+          background: $blue;
+          position: relative;
+          overflow: hidden;
+          border: 1px solid $light-gray;
+          border-bottom: none;
+
+          .semiCircleInner {
+            position: absolute;
+            bottom: 0px;
+            left: 25px;
+            width: 50px;
+            height: 25px;
+            border-top-left-radius: 110px;
+            border-top-right-radius: 110px;
+            background-color: $deep-purple;
+            z-index: 1;
+            border: 1px solid $light-gray;
+            border-bottom: none;
+          }
+
+          .linear1 {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 100%;
+            background: $lilac;
+            transform: rotate(60deg) translateY(20px);
+          }
+
+          .linear2 {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 50px;
+            height: 100%;
+            background: $aqua-green;
+            transform: rotate(-60deg) translateY(20px);
+          }
+          .triangle {
+            width: 40px;
+            height: 40px;
+            border-left: 40px solid transparent;
+            border-right: 4px solid transparent;
+            border-bottom: 4px solid rgb(176, 176, 176);
+            z-index: 3;
+            position: absolute;
+            top: 8px;
+            left: 5px;
+            transform-origin: right bottom;
+          }
+        }
+      }
+    }
+
+    &:nth-child(2n - 1) {
+      background: $deeper-purple;
+    }
+
+    &:nth-child(2n) {
+      background: $deep-purple;
+    }
+
+    .numbers,
+    .percentageValue {
+      color: $mist-gray;
+    }
+
+    .marginBottom {
+      margin-bottom: 4px;
+    }
+  }
+}

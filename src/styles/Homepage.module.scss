@@ -1,0 +1,57 @@
+@use "./Base/" as *;
+
+.appContainer {
+  min-width: 100vw;
+  position: relative;
+  box-sizing: content-box;
+  min-height: 100vh;
+  background-image: $home-gradient;
+
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+  }
+
+  .mainContainer {
+    position: relative;
+    z-index: 2;
+    @include container();
+    color: $white;
+    padding-bottom: 30px;
+
+    h1 {
+      padding: 15px 0;
+    }
+
+    .tabsContainer {
+      display: flex;
+      width: fit-content;
+      border-radius: 120px;
+      overflow: hidden;
+      outline: 2px solid $emerald-green;
+
+      button {
+        padding: 6px 10px;
+        scale: 1.1;
+        cursor: pointer;
+        background: $purple-black;
+        color: $white;
+        font-size: $font-10;
+        font-weight: 600;
+        border: none;
+      }
+
+      .activeTab {
+        background: $emerald-green;
+        color: $black;
+      }
+    }
+
+    .tableContainer {
+      margin-top: 24px;
+      overflow: auto;
+    }
+  }
+}
